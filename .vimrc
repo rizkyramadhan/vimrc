@@ -56,7 +56,7 @@ set t_Co=256
 
 colo jellybeans
 
-" speed up ctrlp: use ag instead of glob
+" speed up ctrlp: use silversearcher-ag instead of glob
 let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
       \ --ignore .git
       \ --ignore .svn
