@@ -11,6 +11,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " My Bundles
+Bundle 'vim-scripts/autosession.vim'
+Bundle 'bufexplorer.zip'
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
@@ -19,7 +21,6 @@ Bundle 'tpope/vim-rake'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
 Bundle 'kana/vim-textobj-user'
@@ -35,12 +36,12 @@ let mapleader=","
 set cursorline
 set expandtab
 set modelines=0
-set shiftwidth=2
+set shiftwidth=4
 set clipboard=unnamed
 set synmaxcol=128
 set ttyscroll=10
 set encoding=utf-8
-set tabstop=2
+set tabstop=4
 set nowrap
 set number
 set expandtab
@@ -53,5 +54,19 @@ set smartcase
 set laststatus=2
 set t_Co=256
 
-let g:Powerline_symbols = 'fancy'
 colo jellybeans
+
+" speed up ctrlp: use ag instead of glob
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+      \ --ignore .git
+      \ --ignore .svn
+      \ --ignore .hg
+      \ --ignore .DS_Store
+      \ --ignore "**/*.pyc"
+      \ -g ""'
+
+" Buffers - explore/next/previous: Alt-F12, F12, Shift-F12.
+nnoremap <silent> <M-F12> :BufExplorer<CR>
+nnoremap <silent> <F12> :bn<CR>
+nnoremap <silent> <S-F12> :bp<CR>
+
