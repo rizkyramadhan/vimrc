@@ -50,6 +50,8 @@ set nobackup
 set hlsearch
 set ignorecase
 set smartcase
+set laststatus=2
+set t_Co=256
 
+let g:Powerline_symbols = 'fancy'
 colo jellybeans
-
